@@ -10,8 +10,9 @@ config_version=5
 
 [application]
 
-config/name="G-pong"
+config/name="G-Pong"
 config/description="Pong made with the Godot Engine"
+config/tags=PackedStringArray("2d")
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
