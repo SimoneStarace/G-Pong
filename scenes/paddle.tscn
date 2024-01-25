@@ -6,6 +6,7 @@
 size = Vector2(50, 200)
 
 [node name="Paddle" type="Area2D" groups=["paddle"]]
+collision_mask = 6
 script = ExtResource("1_bveay")
 
 [node name="ColorRect" type="ColorRect" parent="."]
