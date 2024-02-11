@@ -27,5 +27,7 @@ func _on_area_entered(area):
 	if area is Ball:
 		# Increase the speed
 		area._speed += randi_range(25, 50)
+		# Get the difference in position of the two objects
+		var pos_diff = (area.global_position - self.global_position).normalized().y
 		# Change the direction
-		area._direction = Vector2(_hit_direction,0)
+		area._direction = Vector2(_hit_direction, pos_diff)
