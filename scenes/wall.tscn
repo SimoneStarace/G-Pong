@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfluj6de2coap"]
+
+[ext_resource type="Script" path="res://scripts/wall.gd" id="1_smf6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wucp2"]
+size = Vector2(1280, 40)
+
+[node name="Wall" type="Area2D" groups=["wall"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_smf6i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wucp2")
