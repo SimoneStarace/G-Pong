@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://8q1j6oafyoqk"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_pw4e6"]
+[ext_resource type="PackedScene" uid="uid://dl35sofi7hgug" path="res://scenes/paddle.tscn" id="1_ywk5m"]
+[ext_resource type="PackedScene" uid="uid://dcoto1ei8peki" path="res://scenes/ball.tscn" id="3_bxdgk"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_pw4e6")
+
+[node name="BackgroundColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Paddles" type="Node" parent="."]
+
+[node name="Left Paddle" parent="Paddles" instance=ExtResource("1_ywk5m")]
+position = Vector2(60, 360)
+_speed = 400
+
+[node name="RIght Paddle" parent="Paddles" instance=ExtResource("1_ywk5m")]
+position = Vector2(1220, 360)
+_speed = 400
+_hit_direction = -1
+
+[node name="Ball" parent="." instance=ExtResource("3_bxdgk")]
+position = Vector2(640, 360)
