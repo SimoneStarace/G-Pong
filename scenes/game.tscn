@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://8q1j6oafyoqk"]
+[gd_scene load_steps=5 format=3 uid="uid://8q1j6oafyoqk"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_pw4e6"]
 [ext_resource type="PackedScene" uid="uid://dl35sofi7hgug" path="res://scenes/paddle.tscn" id="1_ywk5m"]
+[ext_resource type="PackedScene" uid="uid://cfluj6de2coap" path="res://scenes/wall.tscn" id="2_8qfl0"]
 [ext_resource type="PackedScene" uid="uid://dcoto1ei8peki" path="res://scenes/ball.tscn" id="3_bxdgk"]
 
 [node name="Game" type="Node"]
@@ -14,6 +15,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Top Wall" parent="Walls" instance=ExtResource("2_8qfl0")]
+position = Vector2(640, -21)
+
+[node name="Bottom Wall" parent="Walls" instance=ExtResource("2_8qfl0")]
+position = Vector2(640, 742)
+_bounce_direction = -1
 
 [node name="Paddles" type="Node" parent="."]
 
