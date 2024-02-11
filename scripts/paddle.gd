@@ -25,5 +25,7 @@ func _process(delta):
 func _on_area_entered(area):
 	# If the ball is entered
 	if area is Ball:
+		# Increase the speed
+		area._speed += randi_range(25, 50)
 		# Change the direction
 		area._direction = Vector2(_hit_direction,0)

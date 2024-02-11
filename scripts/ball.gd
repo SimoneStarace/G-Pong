@@ -5,7 +5,7 @@ const _initial_speed:int = 300
 ## Movement speed of the ball
 @export var _speed:int = _initial_speed
 ## Reference to the screen notifier 2D
-@onready var _2d_notifier = $VisibleOnScreenNotifier2D
+@onready var _2d_notifier:VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 ## Direction of the ball
 var _direction:Vector2 = Vector2.RIGHT
 

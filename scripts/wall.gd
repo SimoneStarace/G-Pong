@@ -9,5 +9,7 @@ func _ready():
 
 func _on_area_entered(area):
 	if area is Ball:
+		# Increase the speed of ball
+		area._speed += randi_range(15, 20)
 		# Change direction
 		area._direction = Vector2(0, _bounce_direction)
