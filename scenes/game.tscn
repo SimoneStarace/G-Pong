@@ -8,7 +8,7 @@
 [node name="Game" type="Node"]
 script = ExtResource("1_pw4e6")
 
-[node name="BackgroundColorRect" type="ColorRect" parent="."]
+[node name="BackgroundColorField" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,20 +18,20 @@ color = Color(0, 0, 0, 1)
 
 [node name="Walls" type="Node" parent="."]
 
-[node name="Top Wall" parent="Walls" instance=ExtResource("2_8qfl0")]
+[node name="TopWall" parent="Walls" instance=ExtResource("2_8qfl0")]
 position = Vector2(640, -21)
 
-[node name="Bottom Wall" parent="Walls" instance=ExtResource("2_8qfl0")]
+[node name="BottomWall" parent="Walls" instance=ExtResource("2_8qfl0")]
 position = Vector2(640, 742)
 _bounce_direction = -1
 
 [node name="Paddles" type="Node" parent="."]
 
-[node name="Left Paddle" parent="Paddles" instance=ExtResource("1_ywk5m")]
+[node name="LeftPaddle" parent="Paddles" instance=ExtResource("1_ywk5m")]
 position = Vector2(60, 360)
 _speed = 400
 
-[node name="RIght Paddle" parent="Paddles" instance=ExtResource("1_ywk5m")]
+[node name="RightPaddle" parent="Paddles" instance=ExtResource("1_ywk5m")]
 position = Vector2(1220, 360)
 _speed = 400
 _hit_direction = -1
