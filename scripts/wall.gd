@@ -12,4 +12,4 @@ func _on_area_entered(area):
 		# Increase the speed of ball
 		area._speed += randi_range(15, 20)
 		# Change direction
-		area._direction = Vector2(0, _bounce_direction)
+		area._direction.y = _bounce_direction
