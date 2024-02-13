@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://8q1j6oafyoqk"]
+[gd_scene load_steps=6 format=3 uid="uid://8q1j6oafyoqk"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_pw4e6"]
 [ext_resource type="PackedScene" uid="uid://dl35sofi7hgug" path="res://scenes/paddle.tscn" id="1_ywk5m"]
 [ext_resource type="PackedScene" uid="uid://cfluj6de2coap" path="res://scenes/wall.tscn" id="2_8qfl0"]
 [ext_resource type="PackedScene" uid="uid://dcoto1ei8peki" path="res://scenes/ball.tscn" id="3_bxdgk"]
+[ext_resource type="Resource" uid="uid://dui7m34jkv14t" path="res://resources/player2_controller.tres" id="4_novf5"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_pw4e6")
@@ -33,6 +34,7 @@ _speed = 400
 
 [node name="RightPaddle" parent="Paddles" instance=ExtResource("1_ywk5m")]
 position = Vector2(1220, 360)
+_player_controller = ExtResource("4_novf5")
 _speed = 400
 _hit_direction = -1
 
