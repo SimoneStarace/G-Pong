@@ -1,4 +1,5 @@
 class_name Game extends Node
+## Main class to handle the Game logic
 
 ## Maximum amount of point to score
 const _max_score:int = 10
@@ -6,6 +7,8 @@ const _max_score:int = 10
 @onready var _ball:Ball = $Ball
 ## Reference to the score menu
 @onready var _score_menu:ScoreMenu = $ScoreMenu
+## Reference to the win screen
+@onready var _win_screen:WinScreen = $WinScreen
 ## Reference to the score values
 var _score_values:Array[int]
 
@@ -35,7 +38,11 @@ func _on_ball_exited():
 		# Remove the paddle and the ball
 		$Paddles.queue_free()
 		_ball.queue_free()
-		## TODO Show which player won
+		# Show the winner
+		if len(_score_values) == 2:
+			_win_screen.set_winner_text("Player 1 Wins") if _score_values[0] > _score_values[1] else _win_screen.set_winner_text("Player 2 Wins")
+		
+		_win_screen.visible = true
 	else:
 		reset_ball(direction2reset)
 
