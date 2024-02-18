@@ -1,0 +1,132 @@
+[gd_scene load_steps=2 format=3 uid="uid://hhq1a7cxu8r6"]
+
+[ext_resource type="Script" path="res://scripts/UI/option_menu.gd" id="1_ceo2h"]
+
+[node name="OptionMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ceo2h")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="MenuLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.5
+offset_top = 20.0
+offset_right = 171.5
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Options Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -182.5
+offset_top = -80.0
+offset_right = 182.5
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+text = "Return to Main Menu"
+
+[node name="Options" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.5
+offset_top = -129.5
+offset_right = 276.5
+offset_bottom = 129.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ScoreOption" type="HBoxContainer" parent="Options"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Options/ScoreOption"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Maximum Score"
+vertical_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="Options/ScoreOption"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+value = 1.0
+rounded = true
+alignment = 1
+
+[node name="LeftPaddleOption" type="HBoxContainer" parent="Options"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Options/LeftPaddleOption"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Left Paddle Color"
+vertical_alignment = 1
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Options/LeftPaddleOption"]
+layout_mode = 2
+size_flags_horizontal = 3
+edit_alpha = false
+
+[node name="RightPaddleOption" type="HBoxContainer" parent="Options"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Options/RightPaddleOption"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Right Paddle Color"
+vertical_alignment = 1
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Options/RightPaddleOption"]
+layout_mode = 2
+size_flags_horizontal = 3
+edit_alpha = false
+
+[node name="BackgroundOption" type="HBoxContainer" parent="Options"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Options/BackgroundOption"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Background Color"
+vertical_alignment = 1
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Options/BackgroundOption"]
+layout_mode = 2
+size_flags_horizontal = 3
+edit_alpha = false
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
