@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://68ovvcmelmj"]
+
+[ext_resource type="Script" path="res://scripts/UI/score_menu.gd" id="1_k8olx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ok2gb"]
+font_size = 72
+outline_color = Color(0, 0, 0, 1)
+
+[node name="ScoreMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+size_flags_vertical = 0
+script = ExtResource("1_k8olx")
+
+[node name="LeftScore" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -81.0
+offset_right = -40.0
+offset_bottom = 99.0
+grow_horizontal = 0
+text = "0"
+label_settings = SubResource("LabelSettings_ok2gb")
+horizontal_alignment = 1
+
+[node name="RightScore" type="Label" parent="."]
+layout_mode = 1
+offset_left = 40.0
+offset_right = 81.0
+offset_bottom = 99.0
+text = "0"
+label_settings = SubResource("LabelSettings_ok2gb")
+horizontal_alignment = 1
