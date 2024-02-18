@@ -15,8 +15,10 @@ var _score_values:Array[int]
 func _ready():
 	# Connect the notifier signal
 	_ball._2d_notifier.screen_exited.connect(_on_ball_exited)
+	
+	var _num_scores:int = len(_score_menu._score_labels)
 	# For each score label set the score value to 0
-	for x in range(len(_score_menu._score_labels)):
+	for x in range(_num_scores):
 		_score_values.append(0)
 		_score_menu.set_score_value(x, _score_values[x])
 	
@@ -24,6 +26,10 @@ func _ready():
 	$BackgroundColorField.color = OptionManager._background_color
 	$Paddles/LeftPaddle/ColorRect.color = OptionManager._left_paddle_color
 	$Paddles/RightPaddle/ColorRect.color = OptionManager._right_paddle_color
+
+	if _num_scores == 2:
+		_score_menu._score_labels[0].label_settings.font_color = OptionManager._left_paddle_color
+		_score_menu._score_labels[1].label_settings.font_color = OptionManager._right_paddle_color
 
 	# Random start position of the ball
 	reset_ball(Vector2.LEFT if randi_range(0,1) == 0 else Vector2.RIGHT)
