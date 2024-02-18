@@ -1,5 +1,7 @@
 class_name Game extends Node
 
+## Maximum amount of point to score
+const _max_score:int = 10
 ## Reference to the ball in the scene
 @onready var _ball:Ball = $Ball
 ## Reference to the score menu
@@ -17,13 +19,25 @@ func _ready():
 	
 ## Function to execute when the ball goes out
 func _on_ball_exited():
+	var direction2reset:Vector2
+	var index2increase:int
 	# Check if the ball exited on the left or on the right
 	if _ball.global_position.x < 0:
-		reset_ball(Vector2.LEFT)
-		increase_score(1)
+		direction2reset = Vector2.LEFT
+		index2increase = 1
 	else:
-		reset_ball(Vector2.RIGHT)
-		increase_score(0)
+		direction2reset = Vector2.RIGHT
+		index2increase = 0
+	
+	increase_score(index2increase)
+	# Check if one of the scores reaches the max value
+	if _score_values[index2increase] >= _max_score:
+		# Remove the paddle and the ball
+		$Paddles.queue_free()
+		_ball.queue_free()
+		## TODO Show which player won
+	else:
+		reset_ball(direction2reset)
 
 ## Resets the ball
 func reset_ball(direction:Vector2):
