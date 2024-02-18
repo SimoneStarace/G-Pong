@@ -20,6 +20,9 @@ func _ready():
 		_score_values.append(0)
 		_score_menu.set_score_value(x, _score_values[x])
 	
+	# Random start position of the ball
+	reset_ball(Vector2.LEFT if randi_range(0,1) == 0 else Vector2.RIGHT)
+
 ## Function to execute when the ball goes out
 func _on_ball_exited():
 	var direction2reset:Vector2
