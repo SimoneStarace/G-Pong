@@ -2,7 +2,7 @@ class_name Game extends Node
 ## Main class to handle the Game logic
 
 ## Maximum amount of point to score
-var _max_score:int = OptionManager._max_score
+@onready var _max_score:int = OptionManager._max_score
 ## Reference to the ball in the scene
 @onready var _ball:Ball = $Ball
 ## Reference to the score menu
@@ -20,6 +20,11 @@ func _ready():
 		_score_values.append(0)
 		_score_menu.set_score_value(x, _score_values[x])
 	
+	# Set the colors
+	$BackgroundColorField.color = OptionManager._background_color
+	$Paddles/LeftPaddle/ColorRect.color = OptionManager._left_paddle_color
+	$Paddles/RightPaddle/ColorRect.color = OptionManager._right_paddle_color
+
 	# Random start position of the ball
 	reset_ball(Vector2.LEFT if randi_range(0,1) == 0 else Vector2.RIGHT)
 
