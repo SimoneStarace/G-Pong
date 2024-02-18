@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://c34ogts7emso"]
+
+[ext_resource type="Script" path="res://scripts/UI/win_screen.gd" id="1_v1emg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8211j"]
+font_size = 70
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v1emg")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.470588, 0.470588, 0.470588, 0.313726)
+
+[node name="WinnerLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_8211j")
+horizontal_alignment = 1
+vertical_alignment = 1
