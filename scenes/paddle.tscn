@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl35sofi7hgug"]
 
-[ext_resource type="Script" path="res://scripts/paddle.gd" id="1_bveay"]
+[ext_resource type="Script" path="res://scripts/Paddle/player_paddle.gd" id="1_nwbx0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpxf"]
 size = Vector2(50, 200)
 
 [node name="Paddle" type="Area2D" groups=["paddle"]]
 collision_mask = 6
-script = ExtResource("1_bveay")
+script = ExtResource("1_nwbx0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
