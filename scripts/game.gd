@@ -2,7 +2,7 @@ class_name Game extends Node
 ## Main class to handle the Game logic
 
 ## Maximum amount of point to score
-const _max_score:int = 10
+var _max_score:int = OptionManager._max_score
 ## Reference to the ball in the scene
 @onready var _ball:Ball = $Ball
 ## Reference to the score menu
