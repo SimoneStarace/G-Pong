@@ -114,6 +114,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 edit_alpha = false
 
+[node name="BallOption" type="HBoxContainer" parent="Options"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Options/BallOption"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Ball Color"
+vertical_alignment = 1
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Options/BallOption"]
+layout_mode = 2
+size_flags_horizontal = 3
+edit_alpha = false
+
 [node name="BackgroundOption" type="HBoxContainer" parent="Options"]
 layout_mode = 2
 alignment = 1
