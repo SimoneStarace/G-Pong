@@ -1,7 +1,7 @@
 class_name Paddle extends Area2D
 
 ## Movement speed of the paddle
-@export var _speed:int = 100
+@export var _speed:int = 600
 ## Hit direction to apply
 @export_enum("Left:-1", "Right:1") var _hit_direction = 1
 ## The size, in the y direction, of the collision shape halved

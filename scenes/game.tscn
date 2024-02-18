@@ -37,12 +37,10 @@ _bounce_direction = -1
 
 [node name="LeftPaddle" parent="Paddles" instance=ExtResource("1_ywk5m")]
 position = Vector2(60, 360)
-_speed = 400
 
 [node name="RightPaddle" parent="Paddles" instance=ExtResource("1_ywk5m")]
 position = Vector2(1220, 360)
 _player_controller = ExtResource("4_novf5")
-_speed = 400
 _hit_direction = -1
 
 [node name="Ball" parent="." instance=ExtResource("3_bxdgk")]
