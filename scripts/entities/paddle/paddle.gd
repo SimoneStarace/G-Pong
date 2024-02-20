@@ -24,3 +24,9 @@ func _on_area_entered(area):
 		var pos_diff = (area.global_position - self.global_position).normalized().y
 		# Change the direction
 		area._direction = Vector2(_hit_direction, pos_diff)
+
+## Moves the paddle
+func move(direction:float, delta:float):
+		# Change the position
+	self.global_position.y += delta * direction * _speed
+	self.global_position.y = global_position.clamp(Vector2(0,_size_y),Vector2(0,_diff)).y
