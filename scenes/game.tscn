@@ -27,10 +27,10 @@ visible = false
 [node name="Walls" type="Node" parent="."]
 
 [node name="TopWall" parent="Walls" instance=ExtResource("2_8qfl0")]
-position = Vector2(640, -21)
+position = Vector2(640, -30)
 
 [node name="BottomWall" parent="Walls" instance=ExtResource("2_8qfl0")]
-position = Vector2(640, 742)
+position = Vector2(640, 750)
 
 [node name="Paddles" type="Node" parent="."]
 

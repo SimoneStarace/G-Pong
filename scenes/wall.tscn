@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/entities/wall.gd" id="1_smf6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wucp2"]
-size = Vector2(1280, 40)
+size = Vector2(1280, 60)
 
 [node name="Wall" type="Area2D" groups=["wall"]]
 collision_layer = 4
