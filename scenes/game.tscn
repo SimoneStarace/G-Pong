@@ -31,7 +31,6 @@ position = Vector2(640, -21)
 
 [node name="BottomWall" parent="Walls" instance=ExtResource("2_8qfl0")]
 position = Vector2(640, 742)
-_bounce_direction = -1
 
 [node name="Paddles" type="Node" parent="."]
 
@@ -41,7 +40,6 @@ position = Vector2(60, 360)
 [node name="RightPaddle" parent="Paddles" instance=ExtResource("1_ywk5m")]
 position = Vector2(1220, 360)
 _player_controller = ExtResource("4_novf5")
-_hit_direction = -1
 
 [node name="Ball" parent="." instance=ExtResource("3_bxdgk")]
 position = Vector2(640, 360)

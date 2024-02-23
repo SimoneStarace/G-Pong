@@ -2,8 +2,6 @@ class_name Paddle extends Area2D
 
 ## Movement speed of the paddle
 @export var _speed:int = 600
-## Hit direction to apply
-@export_enum("Left:-1", "Right:1") var _hit_direction = 1
 ## The size, in the y direction, of the collision shape halved
 @onready var _size_y:float = $CollisionShape2D.shape.size.y/2
 ## The size of the screen in the y direction
@@ -23,7 +21,7 @@ func _on_area_entered(area):
 		# Get the difference in position of the two objects
 		var pos_diff = (area.global_position - self.global_position).normalized().y
 		# Change the direction
-		area._direction = Vector2(_hit_direction, pos_diff)
+		area._direction = Vector2(-area._direction.x, pos_diff)
 
 ## Moves the paddle
 func move(direction:float, delta:float):
