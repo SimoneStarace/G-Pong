@@ -13,7 +13,7 @@ config_version=5
 config/name="G-Pong"
 config/description="Pong made with the Godot Engine"
 config/tags=PackedStringArray("2d")
-run/main_scene="res://scenes/UI/start_menu.tscn"
+run/main_scene="res://scenes/ui/menus/start_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -32,9 +32,9 @@ window/stretch/mode="canvas_items"
 folder_colors={
 "res://assets/sfx/": "yellow",
 "res://resources/": "gray",
-"res://scenes/UI/": "green",
-"res://scripts/UI/": "green",
-"res://scripts/resources/": "gray"
+"res://scenes/ui/": "green",
+"res://scripts/resources/": "gray",
+"res://scripts/ui/": "green"
 }
 
 [input]
