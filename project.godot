@@ -30,6 +30,7 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
+"res://assets/sfx/": "yellow",
 "res://resources/": "gray",
 "res://scenes/UI/": "green",
 "res://scripts/UI/": "green",
