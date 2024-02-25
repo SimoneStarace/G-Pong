@@ -8,7 +8,7 @@ size = Vector2(30, 30)
 
 [node name="Ball" type="Area2D" groups=["ball"]]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("1_viso2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -26,8 +26,6 @@ grow_vertical = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_f754a")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="SoundEffectStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_s2hb6")

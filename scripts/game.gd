@@ -13,8 +13,9 @@ class_name Game extends Node
 var _score_values:Array[int]
 
 func _ready():
-	# Connect the notifier signal
-	_ball._2d_notifier.screen_exited.connect(_on_ball_exited)
+	# Connect the signal on each score area
+	for sa in get_tree().get_nodes_in_group("score_area"):
+		sa.area_exited.connect(_on_ball_exited)
 	
 	var _num_scores:int = len(_score_menu._score_labels)
 	# For each score label set the score value to 0
@@ -36,7 +37,7 @@ func _ready():
 	reset_ball(Vector2.LEFT if randi_range(0,1) == 0 else Vector2.RIGHT)
 
 ## Function to execute when the ball goes out
-func _on_ball_exited():
+func _on_ball_exited(area):
 	var direction2reset:Vector2
 	var index2increase:int
 	# Check if the ball exited on the left or on the right
