@@ -46,6 +46,3 @@ func _ready():
 	_background_color_picker.popup_closed.connect(func():
 		OptionManager._background_color = _background_color_picker.color
 	)
-
-func _on_menu_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/UI/start_menu.tscn")
