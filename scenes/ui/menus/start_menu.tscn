@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://krsi8lnctyfy"]
+[gd_scene load_steps=6 format=3 uid="uid://krsi8lnctyfy"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/start_menu.gd" id="1_hthf8"]
+[ext_resource type="Script" path="res://scripts/ui/buttons/visibility_button.gd" id="2_0af0w"]
 [ext_resource type="PackedScene" uid="uid://b1yqpo8uosw1n" path="res://scenes/ui/buttons/menu_button.tscn" id="2_jhky7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_287nm"]
 font_size = 120
+
+[sub_resource type="LabelSettings" id="LabelSettings_hf3d4"]
+font_size = 24
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -37,7 +41,7 @@ text = "G-Pong
 "
 label_settings = SubResource("LabelSettings_287nm")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="StartContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -51,22 +55,68 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayButton" type="Button" parent="VBoxContainer"]
+[node name="PlayButton" type="Button" parent="StartContainer" node_paths=PackedStringArray("_node2show", "_node2hide")]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Play"
 flat = true
+script = ExtResource("2_0af0w")
+_node2show = NodePath("../../ChooseContainer")
+_node2hide = NodePath("..")
 
-[node name="OptionsButton" parent="VBoxContainer" instance=ExtResource("2_jhky7")]
+[node name="OptionsButton" parent="StartContainer" instance=ExtResource("2_jhky7")]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Options"
 _menu_name = "option_menu"
 
-[node name="CreditsButton" parent="VBoxContainer" instance=ExtResource("2_jhky7")]
+[node name="CreditsButton" parent="StartContainer" instance=ExtResource("2_jhky7")]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Credits"
 _menu_name = "credit_menu"
 
-[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[node name="ChooseContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ChooseContainer"]
+layout_mode = 2
+text = "Choose which way you want to play"
+label_settings = SubResource("LabelSettings_hf3d4")
+horizontal_alignment = 1
+
+[node name="PlayerButton" type="Button" parent="ChooseContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Against Player"
+flat = true
+
+[node name="AIButton" type="Button" parent="ChooseContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Against A.I"
+flat = true
+
+[node name="ReturnButton" type="Button" parent="ChooseContainer" node_paths=PackedStringArray("_node2show", "_node2hide")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Return Back"
+flat = true
+script = ExtResource("2_0af0w")
+_node2show = NodePath("../../StartContainer")
+_node2hide = NodePath("..")
+
+[connection signal="pressed" from="ChooseContainer/PlayerButton" to="." method="_on_player_button_pressed"]
+[connection signal="pressed" from="ChooseContainer/AIButton" to="." method="_on_ai_button_pressed"]
