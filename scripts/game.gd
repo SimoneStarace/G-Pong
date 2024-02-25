@@ -10,7 +10,7 @@ class_name Game extends Node
 ## Reference to the win screen
 @onready var _win_screen:WinScreen = $WinScreen
 ## Reference to the score values
-var _score_values:Array[int]
+var _score_values:Array[int]	
 
 func _ready():
 	# Connect the signal on each score area
@@ -26,13 +26,26 @@ func _ready():
 	# Set the colors
 	$BackgroundColorField.color = OptionManager._background_color
 	$Paddles/LeftPaddle/ColorRect.color = OptionManager._left_paddle_color
-	$Paddles/RightPaddle/ColorRect.color = OptionManager._right_paddle_color
 	$Separator.self_modulate = OptionManager._separator_color
 	_ball.get_node("ColorRect").color = OptionManager._ball_color
 
 	if _num_scores == 2:
 		_score_menu._score_labels[0].label_settings.font_color = OptionManager._left_paddle_color
 		_score_menu._score_labels[1].label_settings.font_color = OptionManager._right_paddle_color
+
+	if OptionManager._playing_with_ai:
+		var ai_paddle = $Paddles/RightPaddleAI
+		ai_paddle.get_node("ColorRect").color = OptionManager._right_paddle_color
+		# Set the speed based on difficulty
+		if OptionManager._difficulty == 0:
+			ai_paddle._speed = 500
+		elif OptionManager._difficulty == 2:
+			ai_paddle._speed = 700
+		# Remove Right Paddle controlled by the player
+		$Paddles/RightPaddle.queue_free()
+	else:
+		$Paddles/RightPaddle/ColorRect.color = OptionManager._right_paddle_color
+		$Paddles/RightPaddleAI.queue_free()
 
 	# Random start position of the ball
 	reset_ball(Vector2.LEFT if randi_range(0,1) == 0 else Vector2.RIGHT)
