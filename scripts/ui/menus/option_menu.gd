@@ -10,6 +10,8 @@ class_name OptionMenu extends Control
 @onready var _right_color_picker:ColorPickerButton = $MarginContainer/Options/RightPaddleOption/ColorPickerButton
 ## Reference to the color picker of the ball.
 @onready var _ball_color_picker:ColorPickerButton = $MarginContainer/Options/BallOption/ColorPickerButton
+## Reference to the field separator color.
+@onready var _separator_color_picker:ColorPickerButton = $MarginContainer/Options/SeparatorOption/ColorPickerButton
 ## Reference to the color picker of the background.
 @onready var _background_color_picker:ColorPickerButton = $MarginContainer/Options/BackgroundOption/ColorPickerButton
 
@@ -21,6 +23,7 @@ func _ready():
 	_right_color_picker.color = OptionManager._right_paddle_color
 	_background_color_picker.color = OptionManager._background_color
 	_ball_color_picker.color = OptionManager._ball_color
+	_separator_color_picker.color = OptionManager._separator_color
 
 	# Connect the signals
 	_spin_box_score.value_changed.connect(func(value:float):
@@ -41,6 +44,10 @@ func _ready():
 	
 	_ball_color_picker.popup_closed.connect(func():
 		OptionManager._ball_color = _ball_color_picker.color
+	)
+	
+	_separator_color_picker.popup_closed.connect(func():
+		OptionManager._separator_color = _separator_color_picker.color
 	)
 
 	_background_color_picker.popup_closed.connect(func():

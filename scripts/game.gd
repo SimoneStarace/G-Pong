@@ -27,6 +27,7 @@ func _ready():
 	$BackgroundColorField.color = OptionManager._background_color
 	$Paddles/LeftPaddle/ColorRect.color = OptionManager._left_paddle_color
 	$Paddles/RightPaddle/ColorRect.color = OptionManager._right_paddle_color
+	$Separator.self_modulate = OptionManager._separator_color
 	_ball.get_node("ColorRect").color = OptionManager._ball_color
 
 	if _num_scores == 2:

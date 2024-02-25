@@ -139,6 +139,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 edit_alpha = false
 
+[node name="SeparatorOption" type="HBoxContainer" parent="MarginContainer/Options"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Options/SeparatorOption"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Field Separator Color"
+vertical_alignment = 1
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Options/SeparatorOption"]
+layout_mode = 2
+size_flags_horizontal = 3
+edit_alpha = false
+
 [node name="BackgroundOption" type="HBoxContainer" parent="MarginContainer/Options"]
 layout_mode = 2
 alignment = 1
