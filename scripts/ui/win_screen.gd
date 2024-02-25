@@ -5,7 +5,7 @@ class_name WinScreen extends Control
 
 func _ready():
 	# Connect the button signals with lambda functions
-	$ReplayButton.pressed.connect(func():
+	$MarginContainer/ReplayButton.pressed.connect(func():
 		get_tree().reload_current_scene()
 	)
 
