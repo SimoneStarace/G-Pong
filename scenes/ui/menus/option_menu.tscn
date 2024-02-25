@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://hhq1a7cxu8r6"]
+[gd_scene load_steps=3 format=3 uid="uid://hhq1a7cxu8r6"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/option_menu.gd" id="1_ceo2h"]
+[ext_resource type="PackedScene" uid="uid://b1yqpo8uosw1n" path="res://scenes/ui/buttons/menu_button.tscn" id="2_e0v8w"]
 
 [node name="OptionMenu" type="Control"]
 layout_mode = 3
@@ -35,21 +36,21 @@ text = "Options Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MenuButton" type="Button" parent="."]
+[node name="MenuButton" parent="." instance=ExtResource("2_e0v8w")]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -182.5
-offset_top = -80.0
-offset_right = 182.5
-offset_bottom = -23.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 35
 text = "Return to Main Menu"
+_menu_name = "start_menu"
 
 [node name="Options" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -166,5 +167,3 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 edit_alpha = false
-
-[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

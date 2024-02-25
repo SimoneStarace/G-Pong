@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://krsi8lnctyfy"]
+[gd_scene load_steps=4 format=3 uid="uid://krsi8lnctyfy"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/start_menu.gd" id="1_hthf8"]
+[ext_resource type="PackedScene" uid="uid://b1yqpo8uosw1n" path="res://scenes/ui/buttons/menu_button.tscn" id="2_jhky7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_287nm"]
 font_size = 120
@@ -56,17 +57,16 @@ theme_override_font_sizes/font_size = 64
 text = "Play"
 flat = true
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+[node name="OptionsButton" parent="VBoxContainer" instance=ExtResource("2_jhky7")]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Options"
-flat = true
+_menu_name = "option_menu"
 
-[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+[node name="CreditsButton" parent="VBoxContainer" instance=ExtResource("2_jhky7")]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Credits"
-flat = true
+_menu_name = "credit_menu"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
