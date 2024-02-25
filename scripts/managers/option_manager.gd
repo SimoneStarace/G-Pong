@@ -1,5 +1,7 @@
 extends Node
 
+## Specify if is playing against A.I or not
+var _playing_with_ai:bool = false
 ## Maximum amount of points to score to finish the game session.
 @export_range(1,100) var _max_score:int = 10
 ## The Difficulty for the A.I.
