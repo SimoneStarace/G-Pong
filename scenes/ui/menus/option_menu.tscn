@@ -21,63 +21,49 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="MenuLabel" type="Label" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -171.5
-offset_top = 20.0
-offset_right = 171.5
-offset_bottom = 89.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="MenuLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "Options Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MenuButton" parent="." instance=ExtResource("2_e0v8w")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="MenuButton" parent="MarginContainer" instance=ExtResource("2_e0v8w")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 text = "Return to Main Menu"
 _menu_name = "start_menu"
 
-[node name="Options" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -276.5
-offset_top = -160.5
-offset_right = 276.5
-offset_bottom = 160.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Options" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 1
 
-[node name="ScoreOption" type="HBoxContainer" parent="Options"]
+[node name="ScoreOption" type="HBoxContainer" parent="MarginContainer/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Options/ScoreOption"]
+[node name="Label" type="Label" parent="MarginContainer/Options/ScoreOption"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Maximum Score"
 vertical_alignment = 1
 
-[node name="SpinBox" type="SpinBox" parent="Options/ScoreOption"]
+[node name="SpinBox" type="SpinBox" parent="MarginContainer/Options/ScoreOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = 1.0
@@ -85,17 +71,17 @@ value = 1.0
 rounded = true
 alignment = 1
 
-[node name="DifficultyOption" type="HBoxContainer" parent="Options"]
+[node name="DifficultyOption" type="HBoxContainer" parent="MarginContainer/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Options/DifficultyOption"]
+[node name="Label" type="Label" parent="MarginContainer/Options/DifficultyOption"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "A.I Difficulty"
 vertical_alignment = 1
 
-[node name="OptionButton" type="OptionButton" parent="Options/DifficultyOption"]
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/Options/DifficultyOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
@@ -108,62 +94,62 @@ popup/item_1/id = 1
 popup/item_2/text = "Hard"
 popup/item_2/id = 2
 
-[node name="LeftPaddleOption" type="HBoxContainer" parent="Options"]
+[node name="LeftPaddleOption" type="HBoxContainer" parent="MarginContainer/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Options/LeftPaddleOption"]
+[node name="Label" type="Label" parent="MarginContainer/Options/LeftPaddleOption"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Left Paddle Color"
 vertical_alignment = 1
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="Options/LeftPaddleOption"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Options/LeftPaddleOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 edit_alpha = false
 
-[node name="RightPaddleOption" type="HBoxContainer" parent="Options"]
+[node name="RightPaddleOption" type="HBoxContainer" parent="MarginContainer/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Options/RightPaddleOption"]
+[node name="Label" type="Label" parent="MarginContainer/Options/RightPaddleOption"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Right Paddle Color"
 vertical_alignment = 1
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="Options/RightPaddleOption"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Options/RightPaddleOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 edit_alpha = false
 
-[node name="BallOption" type="HBoxContainer" parent="Options"]
+[node name="BallOption" type="HBoxContainer" parent="MarginContainer/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Options/BallOption"]
+[node name="Label" type="Label" parent="MarginContainer/Options/BallOption"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Ball Color"
 vertical_alignment = 1
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="Options/BallOption"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Options/BallOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 edit_alpha = false
 
-[node name="BackgroundOption" type="HBoxContainer" parent="Options"]
+[node name="BackgroundOption" type="HBoxContainer" parent="MarginContainer/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Options/BackgroundOption"]
+[node name="Label" type="Label" parent="MarginContainer/Options/BackgroundOption"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Background Color"
 vertical_alignment = 1
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="Options/BackgroundOption"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Options/BackgroundOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 edit_alpha = false
