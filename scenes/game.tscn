@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://8q1j6oafyoqk"]
+[gd_scene load_steps=10 format=3 uid="uid://8q1j6oafyoqk"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_pw4e6"]
 [ext_resource type="PackedScene" uid="uid://dl35sofi7hgug" path="res://scenes/paddle.tscn" id="1_ywk5m"]
 [ext_resource type="PackedScene" uid="uid://cfluj6de2coap" path="res://scenes/wall.tscn" id="2_8qfl0"]
 [ext_resource type="PackedScene" uid="uid://68ovvcmelmj" path="res://scenes/ui/menus/score_menu.tscn" id="2_do6hl"]
+[ext_resource type="Texture2D" uid="uid://bqjfr8ck5aurb" path="res://assets/sprites/field_separator.png" id="2_kuy0e"]
 [ext_resource type="PackedScene" uid="uid://c34ogts7emso" path="res://scenes/ui/win_screen.tscn" id="3_55qq4"]
 [ext_resource type="PackedScene" uid="uid://dcoto1ei8peki" path="res://scenes/ball.tscn" id="3_bxdgk"]
 [ext_resource type="Resource" uid="uid://dui7m34jkv14t" path="res://resources/player2_controller.tres" id="4_novf5"]
@@ -19,6 +20,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Separator" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 2
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kuy0e")
+stretch_mode = 1
 
 [node name="ScoreMenu" parent="." instance=ExtResource("2_do6hl")]
 
