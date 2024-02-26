@@ -25,55 +25,40 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 text = "Credits"
 label_settings = SubResource("LabelSettings_njkrl")
 horizontal_alignment = 1
 
-[node name="MenuButton" parent="." instance=ExtResource("1_fmkrq")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -168.0
-offset_top = -53.0
-offset_right = 168.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Return to Main Menu"
-_menu_name = "start_menu"
+[node name="CreditsContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
-[node name="CreditsContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Developer" type="HBoxContainer" parent="CreditsContainer"]
+[node name="Developer" type="HBoxContainer" parent="MarginContainer/CreditsContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CreditsContainer/Developer"]
+[node name="Label" type="Label" parent="MarginContainer/CreditsContainer/Developer"]
 layout_mode = 2
 text = "Developer:"
 label_settings = SubResource("LabelSettings_qpnbe")
 
-[node name="LinkButton" type="LinkButton" parent="CreditsContainer/Developer"]
+[node name="LinkButton" type="LinkButton" parent="MarginContainer/CreditsContainer/Developer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 32
@@ -81,15 +66,15 @@ text = "Simone Starace"
 underline = 1
 uri = "https://github.com/SimoneStarace"
 
-[node name="Engine" type="HBoxContainer" parent="CreditsContainer"]
+[node name="Engine" type="HBoxContainer" parent="MarginContainer/CreditsContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CreditsContainer/Engine"]
+[node name="Label" type="Label" parent="MarginContainer/CreditsContainer/Engine"]
 layout_mode = 2
 text = "Game Engine:"
 label_settings = SubResource("LabelSettings_qpnbe")
 
-[node name="LinkButton" type="LinkButton" parent="CreditsContainer/Engine"]
+[node name="LinkButton" type="LinkButton" parent="MarginContainer/CreditsContainer/Engine"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 32
@@ -97,18 +82,25 @@ text = "Godot"
 underline = 1
 uri = "https://godotengine.org/"
 
-[node name="SoundEffect" type="HBoxContainer" parent="CreditsContainer"]
+[node name="SoundEffect" type="HBoxContainer" parent="MarginContainer/CreditsContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CreditsContainer/SoundEffect"]
+[node name="Label" type="Label" parent="MarginContainer/CreditsContainer/SoundEffect"]
 layout_mode = 2
 text = "Sound Effects:"
 label_settings = SubResource("LabelSettings_qpnbe")
 
-[node name="LinkButton" type="LinkButton" parent="CreditsContainer/SoundEffect"]
+[node name="LinkButton" type="LinkButton" parent="MarginContainer/CreditsContainer/SoundEffect"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "sfxr"
 underline = 1
 uri = "https://drpetter.se/project_sfxr.html"
+
+[node name="MenuButton" parent="MarginContainer" instance=ExtResource("1_fmkrq")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Return to Main Menu"
+_menu_name = "start_menu"
