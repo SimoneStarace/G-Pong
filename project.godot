@@ -12,6 +12,7 @@ config_version=5
 
 config/name="G-Pong"
 config/description="Pong made with the Godot Engine"
+config/version="0.9"
 config/tags=PackedStringArray("2d")
 run/main_scene="res://scenes/ui/menus/start_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
