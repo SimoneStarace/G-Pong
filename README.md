@@ -1,8 +1,3 @@
----
-title: G-Pong
-date: 2024-02-28
-author: Simone Starace
----
 # Table of Contents
 1. [Introduction](#introduction)
 2. [Credits](#credits)
