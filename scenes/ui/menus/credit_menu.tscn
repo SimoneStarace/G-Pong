@@ -68,13 +68,12 @@ alignment = 1
 [node name="Label" type="Label" parent="MarginContainer/CreditsContainer/Developer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Developer:"
+text = "- Developer"
 label_settings = SubResource("LabelSettings_qpnbe")
-horizontal_alignment = 1
 
 [node name="LinkButton" type="LinkButton" parent="MarginContainer/CreditsContainer/Developer"]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Simone Starace"
@@ -87,11 +86,13 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/CreditsContainer/Engine"]
 layout_mode = 2
-text = "Game Engine:"
+size_flags_horizontal = 3
+text = "- Game Engine"
 label_settings = SubResource("LabelSettings_qpnbe")
 
 [node name="LinkButton" type="LinkButton" parent="MarginContainer/CreditsContainer/Engine"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Godot"
@@ -104,13 +105,34 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/CreditsContainer/SoundEffect"]
 layout_mode = 2
-text = "Sound Effects:"
+size_flags_horizontal = 3
+text = "- Sound Effects"
 label_settings = SubResource("LabelSettings_qpnbe")
 
 [node name="LinkButton" type="LinkButton" parent="MarginContainer/CreditsContainer/SoundEffect"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "sfxr"
 underline = 1
 uri = "https://drpetter.se/project_sfxr.html"
+
+[node name="SourceCode" type="HBoxContainer" parent="MarginContainer/CreditsContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/CreditsContainer/SourceCode"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "- Source Code"
+label_settings = SubResource("LabelSettings_qpnbe")
+
+[node name="LinkButton" type="LinkButton" parent="MarginContainer/CreditsContainer/SourceCode"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "GitHub"
+underline = 1
+uri = "https://github.com/SimoneStarace/G-Pong"
