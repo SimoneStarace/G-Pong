@@ -51,7 +51,7 @@ text = "Return to Main Menu"
 _menu_name = "start_menu"
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
-custom_minimum_size = Vector2(600, 300)
+custom_minimum_size = Vector2(600, 340)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -111,6 +111,22 @@ popup/item_1/text = "Normal"
 popup/item_1/id = 1
 popup/item_2/text = "Hard"
 popup/item_2/id = 2
+
+[node name="SoundOption" type="HBoxContainer" parent="MarginContainer/Panel/Options"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/Options/SoundOption"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Sound Effects"
+vertical_alignment = 1
+
+[node name="SoundCheck" type="CheckBox" parent="MarginContainer/Panel/Options/SoundOption"]
+layout_mode = 2
+size_flags_horizontal = 6
+button_pressed = true
 
 [node name="LeftPaddleOption" type="HBoxContainer" parent="MarginContainer/Panel/Options"]
 layout_mode = 2
