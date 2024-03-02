@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://hhq1a7cxu8r6"]
+[gd_scene load_steps=4 format=3 uid="uid://hhq1a7cxu8r6"]
 
 [ext_resource type="Script" path="res://scripts/ui/menus/option_menu.gd" id="1_ceo2h"]
 [ext_resource type="PackedScene" uid="uid://b1yqpo8uosw1n" path="res://scenes/ui/buttons/menu_button.tscn" id="2_e0v8w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dk76s"]
+bg_color = Color(1, 1, 1, 0.235294)
 
 [node name="OptionMenu" type="Control"]
 layout_mode = 3
@@ -19,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2, 0.2, 0.2, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -47,25 +50,35 @@ size_flags_vertical = 8
 text = "Return to Main Menu"
 _menu_name = "start_menu"
 
-[node name="Options" type="VBoxContainer" parent="MarginContainer"]
-custom_minimum_size = Vector2(550, 0)
+[node name="Panel" type="Panel" parent="MarginContainer"]
+custom_minimum_size = Vector2(600, 300)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_dk76s")
+
+[node name="Options" type="VBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 2
+offset_left = 25.0
+offset_top = 19.0
+offset_right = 575.0
+offset_bottom = 281.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="ScoreOption" type="HBoxContainer" parent="MarginContainer/Options"]
+[node name="ScoreOption" type="HBoxContainer" parent="MarginContainer/Panel/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/Options/ScoreOption"]
+[node name="Label" type="Label" parent="MarginContainer/Panel/Options/ScoreOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Maximum Score"
 vertical_alignment = 1
 
-[node name="SpinBox" type="SpinBox" parent="MarginContainer/Options/ScoreOption"]
+[node name="SpinBox" type="SpinBox" parent="MarginContainer/Panel/Options/ScoreOption"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -74,18 +87,18 @@ value = 1.0
 rounded = true
 alignment = 1
 
-[node name="DifficultyOption" type="HBoxContainer" parent="MarginContainer/Options"]
+[node name="DifficultyOption" type="HBoxContainer" parent="MarginContainer/Panel/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/Options/DifficultyOption"]
+[node name="Label" type="Label" parent="MarginContainer/Panel/Options/DifficultyOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "A.I Difficulty"
 vertical_alignment = 1
 
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/Options/DifficultyOption"]
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/Panel/Options/DifficultyOption"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -99,82 +112,82 @@ popup/item_1/id = 1
 popup/item_2/text = "Hard"
 popup/item_2/id = 2
 
-[node name="LeftPaddleOption" type="HBoxContainer" parent="MarginContainer/Options"]
+[node name="LeftPaddleOption" type="HBoxContainer" parent="MarginContainer/Panel/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/Options/LeftPaddleOption"]
+[node name="Label" type="Label" parent="MarginContainer/Panel/Options/LeftPaddleOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Left Paddle Color"
 vertical_alignment = 1
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Options/LeftPaddleOption"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Panel/Options/LeftPaddleOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 edit_alpha = false
 
-[node name="RightPaddleOption" type="HBoxContainer" parent="MarginContainer/Options"]
+[node name="RightPaddleOption" type="HBoxContainer" parent="MarginContainer/Panel/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/Options/RightPaddleOption"]
+[node name="Label" type="Label" parent="MarginContainer/Panel/Options/RightPaddleOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Right Paddle Color"
 vertical_alignment = 1
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Options/RightPaddleOption"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Panel/Options/RightPaddleOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 edit_alpha = false
 
-[node name="BallOption" type="HBoxContainer" parent="MarginContainer/Options"]
+[node name="BallOption" type="HBoxContainer" parent="MarginContainer/Panel/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/Options/BallOption"]
+[node name="Label" type="Label" parent="MarginContainer/Panel/Options/BallOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Ball Color"
 vertical_alignment = 1
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Options/BallOption"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Panel/Options/BallOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 edit_alpha = false
 
-[node name="SeparatorOption" type="HBoxContainer" parent="MarginContainer/Options"]
+[node name="SeparatorOption" type="HBoxContainer" parent="MarginContainer/Panel/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/Options/SeparatorOption"]
+[node name="Label" type="Label" parent="MarginContainer/Panel/Options/SeparatorOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Field Separator Color"
 vertical_alignment = 1
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Options/SeparatorOption"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Panel/Options/SeparatorOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 edit_alpha = false
 
-[node name="BackgroundOption" type="HBoxContainer" parent="MarginContainer/Options"]
+[node name="BackgroundOption" type="HBoxContainer" parent="MarginContainer/Panel/Options"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/Options/BackgroundOption"]
+[node name="Label" type="Label" parent="MarginContainer/Panel/Options/BackgroundOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Background Color"
 vertical_alignment = 1
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Options/BackgroundOption"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/Panel/Options/BackgroundOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 edit_alpha = false
