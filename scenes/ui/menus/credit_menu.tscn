@@ -73,7 +73,7 @@ label_settings = SubResource("LabelSettings_qpnbe")
 
 [node name="LinkButton" type="LinkButton" parent="MarginContainer/CreditsContainer/Developer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Simone Starace"
@@ -92,7 +92,7 @@ label_settings = SubResource("LabelSettings_qpnbe")
 
 [node name="LinkButton" type="LinkButton" parent="MarginContainer/CreditsContainer/Engine"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Godot"
@@ -111,7 +111,7 @@ label_settings = SubResource("LabelSettings_qpnbe")
 
 [node name="LinkButton" type="LinkButton" parent="MarginContainer/CreditsContainer/SoundEffect"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "sfxr"
@@ -130,7 +130,7 @@ label_settings = SubResource("LabelSettings_qpnbe")
 
 [node name="LinkButton" type="LinkButton" parent="MarginContainer/CreditsContainer/SourceCode"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "GitHub"
