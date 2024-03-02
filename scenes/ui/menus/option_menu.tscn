@@ -48,6 +48,7 @@ text = "Return to Main Menu"
 _menu_name = "start_menu"
 
 [node name="Options" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(550, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -59,11 +60,13 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/Options/ScoreOption"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Maximum Score"
 vertical_alignment = 1
 
 [node name="SpinBox" type="SpinBox" parent="MarginContainer/Options/ScoreOption"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = 1.0
@@ -77,11 +80,13 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/Options/DifficultyOption"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "A.I Difficulty"
 vertical_alignment = 1
 
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/Options/DifficultyOption"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
@@ -100,6 +105,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/Options/LeftPaddleOption"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Left Paddle Color"
 vertical_alignment = 1
@@ -115,6 +121,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/Options/RightPaddleOption"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Right Paddle Color"
 vertical_alignment = 1
@@ -130,6 +137,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/Options/BallOption"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Ball Color"
 vertical_alignment = 1
@@ -145,6 +153,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/Options/SeparatorOption"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Field Separator Color"
 vertical_alignment = 1
@@ -160,6 +169,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/Options/BackgroundOption"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Background Color"
 vertical_alignment = 1
