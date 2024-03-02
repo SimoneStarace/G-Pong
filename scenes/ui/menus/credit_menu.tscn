@@ -45,21 +45,36 @@ text = "Credits"
 label_settings = SubResource("LabelSettings_njkrl")
 horizontal_alignment = 1
 
-[node name="CreditsContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="MenuButton" parent="MarginContainer" instance=ExtResource("1_fmkrq")]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Return to Main Menu"
+_menu_name = "start_menu"
+
+[node name="CreditsContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
 
 [node name="Developer" type="HBoxContainer" parent="MarginContainer/CreditsContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/CreditsContainer/Developer"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Developer:"
 label_settings = SubResource("LabelSettings_qpnbe")
+horizontal_alignment = 1
 
 [node name="LinkButton" type="LinkButton" parent="MarginContainer/CreditsContainer/Developer"]
 layout_mode = 2
+size_flags_horizontal = 6
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Simone Starace"
@@ -68,6 +83,7 @@ uri = "https://github.com/SimoneStarace"
 
 [node name="Engine" type="HBoxContainer" parent="MarginContainer/CreditsContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/CreditsContainer/Engine"]
 layout_mode = 2
@@ -84,6 +100,7 @@ uri = "https://godotengine.org/"
 
 [node name="SoundEffect" type="HBoxContainer" parent="MarginContainer/CreditsContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/CreditsContainer/SoundEffect"]
 layout_mode = 2
@@ -97,10 +114,3 @@ theme_override_font_sizes/font_size = 32
 text = "sfxr"
 underline = 1
 uri = "https://drpetter.se/project_sfxr.html"
-
-[node name="MenuButton" parent="MarginContainer" instance=ExtResource("1_fmkrq")]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-text = "Return to Main Menu"
-_menu_name = "start_menu"
