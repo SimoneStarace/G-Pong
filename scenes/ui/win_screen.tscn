@@ -5,6 +5,8 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_8211j"]
 font_size = 70
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -48,6 +50,7 @@ size_flags_vertical = 8
 theme_override_font_sizes/font_size = 30
 text = "Replay
 Game"
+flat = true
 
 [node name="MenuButton" parent="MarginContainer" instance=ExtResource("2_y4jbx")]
 layout_mode = 2
@@ -55,5 +58,4 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Return on
 Main Menu"
-flat = false
 _menu_name = "start_menu"
