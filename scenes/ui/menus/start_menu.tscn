@@ -90,10 +90,11 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="ChooseContainer"]
 layout_mode = 2
-text = "Choose which way you want to play"
+text = "Choose who you want to play against with"
 label_settings = SubResource("LabelSettings_hf3d4")
 horizontal_alignment = 1
 
