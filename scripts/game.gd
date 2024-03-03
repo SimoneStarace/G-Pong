@@ -17,6 +17,9 @@ var _score_values:Array[int]
 var _match_on:bool = true
 
 func _ready():
+	# Make sure both PauseMenu and WinScreen are not visible
+	_pause_menu.visible = false
+	_win_screen.visible = false
 	# Connect the signal on each score area
 	for sa in get_tree().get_nodes_in_group("score_area"):
 		sa.area_exited.connect(_on_ball_exited)
