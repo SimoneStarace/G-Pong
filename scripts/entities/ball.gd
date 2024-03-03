@@ -12,7 +12,8 @@ const _initial_speed:int = 300
 var _direction:Vector2 = Vector2.RIGHT
 
 func _ready():
-	self.area_entered.connect(collision_sound)
+	if OptionManager._sound_on and _sfx.stream != null and !self.area_entered.is_connected(collision_sound):
+		self.area_entered.connect(collision_sound)
 
 func _process(delta):
 	# Change the position of the ball
@@ -25,5 +26,5 @@ func reset():
 
 ## Makes the sound when the it collides to a wall or a paddle
 func collision_sound(area):
-	if _sfx.stream != null and (area is Paddle or area is Wall):
+	if area is Paddle or area is Wall:
 		_sfx.play()

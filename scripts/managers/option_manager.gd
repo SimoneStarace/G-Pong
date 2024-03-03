@@ -6,6 +6,8 @@ var _playing_with_ai:bool = false
 @export_range(1,100) var _max_score:int = 10
 ## The Difficulty for the A.I.
 @export_enum("Easy", "Normal", "Hard") var _difficulty:int = 1
+## Boolean to enable or disable the sound.
+@export var _sound_on:bool = true
 @export_category("Colors")
 ## Color for the left paddle.
 @export_color_no_alpha var _left_paddle_color:Color = Color.WHITE
