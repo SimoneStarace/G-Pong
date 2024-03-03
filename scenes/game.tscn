@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://8q1j6oafyoqk"]
+[gd_scene load_steps=12 format=3 uid="uid://8q1j6oafyoqk"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_pw4e6"]
 [ext_resource type="PackedScene" uid="uid://dl35sofi7hgug" path="res://scenes/paddle.tscn" id="1_ywk5m"]
+[ext_resource type="PackedScene" uid="uid://58h2r802kbri" path="res://scenes/ui/menus/pause_menu.tscn" id="2_8o2hp"]
 [ext_resource type="PackedScene" uid="uid://cfluj6de2coap" path="res://scenes/wall.tscn" id="2_8qfl0"]
 [ext_resource type="PackedScene" uid="uid://68ovvcmelmj" path="res://scenes/ui/menus/score_menu.tscn" id="2_do6hl"]
 [ext_resource type="Texture2D" uid="uid://bqjfr8ck5aurb" path="res://assets/sprites/field_separator.png" id="2_kuy0e"]
@@ -22,6 +23,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_8o2hp")]
 
 [node name="Separator" type="TextureRect" parent="."]
 z_index = -1

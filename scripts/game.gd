@@ -9,6 +9,8 @@ class_name Game extends Node
 @onready var _score_menu:ScoreMenu = $ScoreMenu
 ## Reference to the win screen
 @onready var _win_screen:WinScreen = $WinScreen
+## Reference to the pause menu
+@onready var _pause_menu:Control = $PauseMenu
 ## Reference to the score values
 var _score_values:Array[int]	
 
@@ -49,6 +51,10 @@ func _ready():
 
 	# Random start position of the ball
 	reset_ball(Vector2.LEFT if randi_range(0,1) == 0 else Vector2.RIGHT)
+
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		_pause_menu.show_menu()
 
 ## Function to execute when the ball goes out
 func _on_ball_exited(area):
