@@ -16,6 +16,7 @@ config/version="0.9"
 config/tags=PackedStringArray("2d")
 run/main_scene="res://scenes/ui/menus/start_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -27,6 +28,7 @@ OptionManager="*res://scenes/managers/option_manager.tscn"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [file_customization]
 
@@ -37,6 +39,11 @@ folder_colors={
 "res://scripts/resources/": "gray",
 "res://scripts/ui/": "green"
 }
+
+[filesystem]
+
+import/blender/enabled=false
+import/fbx/enabled=false
 
 [input]
 
