@@ -12,7 +12,9 @@ class_name Game extends Node
 ## Reference to the pause menu
 @onready var _pause_menu:Control = $PauseMenu
 ## Reference to the score values
-var _score_values:Array[int]	
+var _score_values:Array[int]
+## Boolean to specify if the match is still on or not.
+var _match_on:bool = true
 
 func _ready():
 	# Connect the signal on each score area
@@ -53,7 +55,9 @@ func _ready():
 	reset_ball(Vector2.LEFT if randi_range(0,1) == 0 else Vector2.RIGHT)
 
 func _process(delta):
-	if Input.is_action_just_pressed("pause"):
+	# If the match is still on and player pressed pause
+	if _match_on and Input.is_action_just_pressed("pause"):
+		# Show the pause menu
 		_pause_menu.show_menu()
 
 ## Function to execute when the ball goes out
@@ -71,6 +75,8 @@ func _on_ball_exited(area):
 	increase_score(index2increase)
 	# Check if one of the scores reaches the max value
 	if _score_values[index2increase] >= _max_score:
+		# The match is over
+		_match_on = false
 		# Remove the paddle and the ball
 		$Paddles.queue_free()
 		_ball.queue_free()
