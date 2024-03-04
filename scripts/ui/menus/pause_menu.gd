@@ -5,9 +5,9 @@ func _ready():
 
 func show_menu():
 	get_tree().paused = true
-	self.visible = true
+	show()
 
 func hide_menu():
-	self.visible = false
+	hide()
 	get_tree().paused = false
 
