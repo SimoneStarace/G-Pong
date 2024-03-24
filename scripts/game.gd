@@ -57,14 +57,14 @@ func _ready():
 	# Random start position of the ball
 	reset_ball(Vector2.LEFT if randi_range(0,1) == 0 else Vector2.RIGHT)
 
-func _process(delta):
+func _process(_delta):
 	# If the match is still on and player pressed pause
 	if _match_on and Input.is_action_just_pressed("pause"):
 		# Show the pause menu
 		_pause_menu.show_menu()
 
 ## Function to execute when the ball goes out
-func _on_ball_exited(area):
+func _on_ball_exited(_area):
 	var direction2reset:Vector2
 	var index2increase:int
 	# Check if the ball exited on the left or on the right
